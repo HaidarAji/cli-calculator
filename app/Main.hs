@@ -1,6 +1,8 @@
 module Main (main) where
 
-import Lib (evaluate)
+import Lib ( evaluate
+            , evaluate'
+            )
 
 main :: IO ()
 main = do
@@ -21,7 +23,7 @@ loop = do
     if input == "exit"
         then putStrLn "Goodbye!"
         else do
-            case evaluate input of
+            case evaluate' input of
                 Right x -> putStrLn $ "Result: " ++ show x
                 Left y -> putStrLn y
             loop
