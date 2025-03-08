@@ -1,8 +1,8 @@
 module Main (main) where
 
-import Lib ( evaluate
-            , evaluate'
+import Lib ( evaluate'
             )
+import System.IO ( hFlush, stdout )
 
 main :: IO ()
 main = do
@@ -18,7 +18,7 @@ greeting = [
 loop :: IO ()
 loop = do 
     putStr "> "
-    -- hFlush stdout
+    hFlush stdout
     input <- getLine
     if input == "exit"
         then putStrLn "Goodbye!"
